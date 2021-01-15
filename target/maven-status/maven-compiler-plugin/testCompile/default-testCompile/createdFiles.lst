@@ -1,0 +1,7 @@
+repositories/RepRepositoryTest.class
+utils/TimeUtilsTest.class
+repositories/CategoryRepositoryTest.class
+services/ClaimNoteServiceTest.class
+repositories/ClaimRepositoryTest.class
+repositories/ClaimNoteRepositoryTest.class
+services/NoteRepServiceTest.class
