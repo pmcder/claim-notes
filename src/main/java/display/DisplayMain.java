@@ -6,6 +6,8 @@ public class DisplayMain {
 	
     private static final long serialVersionUID = 1L;  
     
+    public static ClaimNotesFrame claimNotesFrame;
+    
     /**
      * 
      * The main method launches the application and creates a Claim Notes GUI.
@@ -13,11 +15,15 @@ public class DisplayMain {
      */
     public static void main(String[] args) {
     	
-    	
-    	
+    
     	SwingUtilities.invokeLater(new Runnable() {
 		    public void run() {
-		    	ClaimNotesFrame claimNotesFrame = new ClaimNotesFrame();
+		    	claimNotesFrame = new ClaimNotesFrame();
 		    }});
+    }
+    
+    public static void refresh() {
+    	claimNotesFrame.dispose();
+    	claimNotesFrame = new ClaimNotesFrame();
     }
 }

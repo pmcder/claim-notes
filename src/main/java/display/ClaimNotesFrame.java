@@ -3,6 +3,7 @@ package display;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.EventListener;
 
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
@@ -57,8 +58,10 @@ public class ClaimNotesFrame extends JFrame {
 		jpanel = notePanelFactory.getClaimNotePanel(1);
         
         scrollableTextArea = new JScrollPane(jpanel); 
+        
+        
        
-        //use flag here or use state pattern to prevent more than one add windown opening
+        //TODO use flag here or use state pattern to prevent more than one add windown opening
         ActionListener actionListener = new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -67,12 +70,9 @@ public class ClaimNotesFrame extends JFrame {
 				 addNoteFrame.setVisible(true);
 				return;
 				}
-				if (e.getSource()==goButton) {}
-				refresh();
-				//SwingUtilities.invokeLater(new Runnable() {
-				//   public void run() {
-				//      refresh();
-				// }});
+				if (e.getSource()==goButton) {
+					//TODO
+				}
 				
 			}};
 		addButton.addActionListener(actionListener);
@@ -82,21 +82,6 @@ public class ClaimNotesFrame extends JFrame {
         getContentPane().add(scrollableTextArea);  
         pack();
     }
-    
-    public void refresh() {
-    	scrollableTextArea.remove(jpanel);
-    	JPanel jp = this.notePanelFactory.getClaimNotePanel(1);
-    	scrollableTextArea.add(jp);
-    	
-    	SwingUtilities.invokeLater(new Runnable() {
-    		
-			   public void run() {
-				   scrollableTextArea.revalidate();
-				   revalidate();
-			    	
-			  }});
-    	
-    	
-    }
+ 
 
 }

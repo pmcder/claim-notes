@@ -75,6 +75,7 @@ public class AddNote extends JPanel implements ActionListener{
 		ClaimNote claimNote = new ClaimNote(this.claimNoteService.getLastId(claimId) + 1, 1, 1, this.categoryRepository.findIdByCategoryName(categoryComboBox.getSelectedItem().toString()), LocalDateTime.now(), textArea.getText(), true);
 		claimNoteService.save(claimNote);
 		this.jframe.dispose();
+		DisplayMain.refresh();
 		}
 		if (e.getSource()==cancelButton) {
 		this.jframe.dispose();
