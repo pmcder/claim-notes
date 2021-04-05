@@ -19,7 +19,7 @@ public class NotePanelFactory {
 	
 	/**
 	 * Creates a claimNotePanel object populated 
-	 * with NotePanes of the claim_notes for the claimId passed as a argument.
+	 * with NotePanes of the claim_notes for the claimId passed as an argument.
 	 * Each claimNote is checked to see if over 24 hours old and if so the pane will
 	 * not have a check box to select for editing.
 	 * @param claimId the claimId for the claim to get notes for.

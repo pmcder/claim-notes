@@ -14,6 +14,11 @@ public class ClaimNoteService {
 		this.claimNoteRepository = new ClaimNoteRepository();
 	}
 	
+	/**
+	 * Returns a List of claimNote objects of all claim notes matching the specified claimId.
+	 * @param claimId a claim id as a long.
+	 * @return a List of claimNote objects
+	 */
 	public List<ClaimNote> getNotesByClaimId(long claimId) {
 		List<ClaimNote> claimNoteList = this.claimNoteRepository.findAllByClaimId(claimId);
 		claimNoteList.forEach(c ->{
